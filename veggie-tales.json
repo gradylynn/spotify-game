@@ -1,0 +1,990 @@
+{
+    "success": true,
+    "data": {
+        "uri": "spotify:album:0n3mrhnJn9cd6i17A0zGTP",
+        "name": "All The Songs (Vol. 1)",
+        "cover": {
+            "uri": "https://i.scdn.co/image/ab67616d00001e028b5fb1bed17c40aa554f71c3"
+        },
+        "year": 2014,
+        "month": 10,
+        "day": 11,
+        "track_count": 50,
+        "discs": [
+            {
+                "number": 1,
+                "name": "All The Songs (Vol. 1)",
+                "tracks": [
+                    {
+                        "uri": "spotify:track:4OO0NV1rtea6IGCQFAEz6x",
+                        "playcount": 9393311,
+                        "name": "VeggieTales Theme Song",
+                        "popularity": 0,
+                        "number": 1,
+                        "duration": 86733,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6ZgxXDVDLyQm03iKj8b0qG",
+                        "playcount": 4979693,
+                        "name": "God Is Bigger",
+                        "popularity": 0,
+                        "number": 2,
+                        "duration": 206266,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6iqcdhBwiB528LQmCmZKYT",
+                        "playcount": 5074357,
+                        "name": "The Water Buffalo Song",
+                        "popularity": 0,
+                        "number": 3,
+                        "duration": 75666,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6PMJH0sOHQwA7OZXKkDTrJ",
+                        "playcount": 1049209,
+                        "name": "King Darius Suite",
+                        "popularity": 0,
+                        "number": 4,
+                        "duration": 131226,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:078VabGEk7X0FF78YsDEGX",
+                        "playcount": 3051211,
+                        "name": "Oh, No! What We Gonna Do?",
+                        "popularity": 0,
+                        "number": 5,
+                        "duration": 119106,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:7pl4qFXAOuo0bWPH0aN38k",
+                        "playcount": 793245,
+                        "name": "We've Got Some News",
+                        "popularity": 0,
+                        "number": 6,
+                        "duration": 115760,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:2J8Z80mAVWkbvOhJLTzjmc",
+                        "playcount": 1037052,
+                        "name": "Fear Not, Daniel",
+                        "popularity": 0,
+                        "number": 7,
+                        "duration": 76200,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0KhKVGSHBhUs8hIexyvwj4",
+                        "playcount": 1253952,
+                        "name": "We Are The Grapes Of Wrath",
+                        "popularity": 0,
+                        "number": 8,
+                        "duration": 82360,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1qTkiYhtI8hxsx0tcoVa1S",
+                        "playcount": 957351,
+                        "name": "The Forgiveness Song",
+                        "popularity": 0,
+                        "number": 9,
+                        "duration": 109640,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:2kG8OkUJmqyOCMHpvYcsOf",
+                        "playcount": 878938,
+                        "name": "Busy, Busy",
+                        "popularity": 0,
+                        "number": 10,
+                        "duration": 63360,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:5ie539jDbPDf7lTDrGxcDx",
+                        "playcount": 1536776,
+                        "name": "Love Your Neighbor",
+                        "popularity": 0,
+                        "number": 11,
+                        "duration": 78466,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:7byEE1H59Byz5yuUhFPQaa",
+                        "playcount": 7177908,
+                        "name": "The Hairbrush Song",
+                        "popularity": 0,
+                        "number": 12,
+                        "duration": 184400,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:5o0oo12YaBbwoBstWABIlt",
+                        "playcount": 1921717,
+                        "name": "I Can Be Your Friend",
+                        "popularity": 0,
+                        "number": 13,
+                        "duration": 85906,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0124oLOJQh8gK2cxYmlfqt",
+                        "playcount": 8175,
+                        "name": "What We Have Learned",
+                        "popularity": 0,
+                        "number": 14,
+                        "duration": 23573,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0sEhIobjYhQ3QstHT97JZV",
+                        "playcount": 2753156,
+                        "name": "The Dance Of The Cucumber",
+                        "popularity": 0,
+                        "number": 15,
+                        "duration": 197160,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6gA4X8U9xbByGSxkOt4BTq",
+                        "playcount": 1015453,
+                        "name": "Good Morning George",
+                        "popularity": 0,
+                        "number": 16,
+                        "duration": 142240,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:4kS1agfavO95egWhXtQKLE",
+                        "playcount": 1184819,
+                        "name": "Think Of Me",
+                        "popularity": 0,
+                        "number": 17,
+                        "duration": 90866,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1OHFJ5nXHMdB8KvDw2Fini",
+                        "playcount": 954491,
+                        "name": "The Bunny Song",
+                        "popularity": 0,
+                        "number": 18,
+                        "duration": 60266,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:5iPsmrONmB8MYU3HBTqDCY",
+                        "playcount": 1348706,
+                        "name": "The New And Improved Bunny Song",
+                        "popularity": 0,
+                        "number": 19,
+                        "duration": 124840,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1iSIj9aIRYcrIf4n5Trp3j",
+                        "playcount": 1380089,
+                        "name": "Stand",
+                        "popularity": 0,
+                        "number": 20,
+                        "duration": 103760,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:3zODOoHI3Tyi6ufkwwtIWi",
+                        "playcount": 3850087,
+                        "name": "Love My Lips",
+                        "popularity": 0,
+                        "number": 21,
+                        "duration": 202933,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6UM5FodBTQu2W6QKd4ipFH",
+                        "playcount": 601249,
+                        "name": "Big Things, Too",
+                        "popularity": 0,
+                        "number": 22,
+                        "duration": 139666,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:26u3mLzzKqwfP9ucltG1t8",
+                        "playcount": 5104476,
+                        "name": "The Pirates Who Don't Do Anything",
+                        "popularity": 0,
+                        "number": 23,
+                        "duration": 195573,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1wvHjRjyRxiXJUXTupssoR",
+                        "playcount": 411746,
+                        "name": "It's Laura's Fault",
+                        "popularity": 0,
+                        "number": 24,
+                        "duration": 80733,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:2VBLHnZRm45hlTD3nEeRDK",
+                        "playcount": 1099199,
+                        "name": "The LarryBoy Theme Song - From \"LarryBoy\" Soundtrack",
+                        "popularity": 0,
+                        "number": 25,
+                        "duration": 200266,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:2G0qYYxF07O4m6I1W38rfO",
+                        "playcount": 870704,
+                        "name": "Promised Land",
+                        "popularity": 0,
+                        "number": 26,
+                        "duration": 93560,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1FlfRGee9hBhZwWbAQhnqY",
+                        "playcount": 460159,
+                        "name": "The Lord Has Given",
+                        "popularity": 0,
+                        "number": 27,
+                        "duration": 48440,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:2RDGtwwFzEGfVALhtxRzTC",
+                        "playcount": 1425412,
+                        "name": "Keep Walking",
+                        "popularity": 0,
+                        "number": 28,
+                        "duration": 107666,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0ZD1GFffsr8KmAG3DlTUcE",
+                        "playcount": 3413346,
+                        "name": "The Song Of The Cebu",
+                        "popularity": 0,
+                        "number": 29,
+                        "duration": 235933,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1lXxObkN0SAIwVFPOfo8zQ",
+                        "playcount": 358017,
+                        "name": "Bumblyburg Groove Remix - From \"LarryBoy\" Soundtrack",
+                        "popularity": 0,
+                        "number": 30,
+                        "duration": 144533,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:3zPz1a4M1BMtDKkDXvYeSF",
+                        "playcount": 308265,
+                        "name": "Superhero Slim-Down - From \"LarryBoy\" Soundtrack",
+                        "popularity": 0,
+                        "number": 31,
+                        "duration": 152600,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6V9qSNHpSwYVTcGrElfQW0",
+                        "playcount": 563473,
+                        "name": "The Rumor Weed Song",
+                        "popularity": 0,
+                        "number": 32,
+                        "duration": 143000,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0v5BXNjMMqNgMQrLYUCqLY",
+                        "playcount": 508865,
+                        "name": "I'm So Blue",
+                        "popularity": 0,
+                        "number": 33,
+                        "duration": 191693,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:2NPxM27ifJJCTWcVaIu7a7",
+                        "playcount": 402166,
+                        "name": "Stuff-Mart Suite",
+                        "popularity": 0,
+                        "number": 34,
+                        "duration": 83466,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6UtcZwTKKr27qHIJ3AXw4V",
+                        "playcount": 459497,
+                        "name": "Salesmunz Rap",
+                        "popularity": 0,
+                        "number": 35,
+                        "duration": 127840,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:64PHnJSNTCGISy9LDl5tcm",
+                        "playcount": 717719,
+                        "name": "Thankfulness Song Medley",
+                        "popularity": 0,
+                        "number": 36,
+                        "duration": 157293,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:73QZkotVCpqByMS1UH63lX",
+                        "playcount": 302461,
+                        "name": "Stuff Stuff, Mart Mart",
+                        "popularity": 0,
+                        "number": 37,
+                        "duration": 119306,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:1yqKmh34n2ZFMWo0ftxXcA",
+                        "playcount": 7487714,
+                        "name": "His Cheeseburger",
+                        "popularity": 0,
+                        "number": 38,
+                        "duration": 188493,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0uzeJwljfrbnUA4yQ7KFWw",
+                        "playcount": 2175046,
+                        "name": "The Yodeling Veterinarian Of The Alps",
+                        "popularity": 0,
+                        "number": 39,
+                        "duration": 240106,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:5I0qxpoFXoCy3oH74LUBpS",
+                        "playcount": 580434,
+                        "name": "I Love My Duck",
+                        "popularity": 0,
+                        "number": 40,
+                        "duration": 171693,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:3aOUVC83rseiTkXWonm6Ts",
+                        "playcount": 403403,
+                        "name": "I Must Have It",
+                        "popularity": 0,
+                        "number": 41,
+                        "duration": 44800,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:0Wqb4Wtm11Z8Mrz0uemzhH",
+                        "playcount": 408810,
+                        "name": "There Once Was A Man",
+                        "popularity": 0,
+                        "number": 42,
+                        "duration": 165640,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:62kE4nJAO9QAmu07gujGq6",
+                        "playcount": 292242,
+                        "name": "The Selfish Song",
+                        "popularity": 0,
+                        "number": 43,
+                        "duration": 77560,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:4L0YYndOaCNQuTbtJqiNAz",
+                        "playcount": 2528269,
+                        "name": "Endangered Love",
+                        "popularity": 0,
+                        "number": 44,
+                        "duration": 197173,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:49amsg8cFYHnjtgRkNjqAZ",
+                        "playcount": 230479,
+                        "name": "The Battle Prelude",
+                        "popularity": 0,
+                        "number": 45,
+                        "duration": 54000,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:5dZXp9PfxBOJi22EuPd041",
+                        "playcount": 335247,
+                        "name": "Haman's Song",
+                        "popularity": 0,
+                        "number": 46,
+                        "duration": 175733,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:57VP5LrynvgMcqR3yWx2QX",
+                        "playcount": 476650,
+                        "name": "The Battle Is Not Ours",
+                        "popularity": 0,
+                        "number": 47,
+                        "duration": 155266,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:6XIYbtS60rHVpqvTdw5Y2g",
+                        "playcount": 579155,
+                        "name": "Lost Puppies",
+                        "popularity": 0,
+                        "number": 48,
+                        "duration": 69226,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:56EmykrI9wb8dX49KC7Opz",
+                        "playcount": 1499191,
+                        "name": "Larry's High Silk Hat",
+                        "popularity": 0,
+                        "number": 49,
+                        "duration": 230573,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uri": "spotify:track:4YQsLPocKnVLc28Y28RUhn",
+                        "playcount": 1342813,
+                        "name": "Do The Moo Shoo",
+                        "popularity": 0,
+                        "number": 50,
+                        "duration": 42066,
+                        "explicit": false,
+                        "playable": true,
+                        "artists": [
+                            {
+                                "name": "VeggieTales",
+                                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                                "image": {
+                                    "uri": ""
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "copyrights": [
+            "© 2015 Big Idea Entertainment",
+            "This Compilation ℗ 2014 Big Idea Entertainment"
+        ],
+        "artists": [
+            {
+                "name": "VeggieTales",
+                "uri": "spotify:artist:4QKx7KohkWZAOkO4sI3GRx",
+                "image": {
+                    "uri": ""
+                }
+            }
+        ],
+        "related": {
+            "releases": []
+        },
+        "type": "ALBUM",
+        "label": "Big Idea Entertainment Inc"
+    }
+}

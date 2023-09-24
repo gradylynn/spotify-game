@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "spotify-game"
+version = "0.1.0"
+description = ""
+authors = ["Grady Lynn <gradylynn314@gmail.com>"]
+readme = "README.md"
+packages = [{include = "spotify_game"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.2"
