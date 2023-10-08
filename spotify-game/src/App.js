@@ -6,6 +6,8 @@ import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -25,13 +27,13 @@ const App = () => {
               </Typography>
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
-              <TrackCard sx={{flexGrow: 1}} trackId='5LAUpU2KhoVDnur463CAuT'></TrackCard>
+              <TrackCard trackId='5LAUpU2KhoVDnur463CAuT'></TrackCard>
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
               <TrackCard trackId='4JyZnltqvgBqTRLCMxj6Kk'></TrackCard>
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1} alignSelf="center">
-              <Button variant="contained" sx={{flex: 1}}>Contained</Button>
+              <Button variant="contained">Contained</Button>
             </Grid>
           </Grid>
         </Container>
@@ -41,14 +43,22 @@ const App = () => {
 
 
 const TrackCard = ({trackId}) => {
-    return <Card raised={true}>
-        <Grid container alignItems="center" justifyContent="center">
+      return <Card raised={true} sx={{
+        height: {
+          xs: 160,
+          sm: 160,
+          md: 252,
+          lg: 252,
+          xl: 300,
+        },
+      }}>
+        <Grid container>
           <Grid item xs={10}>
             <Box sx={{my: 5, ml: 5}}>
               <TrackChoice trackId={trackId}></TrackChoice>
             </Box>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={2} alignSelf='center'>
             <Box sx={{m: 5}}>
               <Checkbox {...label} size="large"></Checkbox>
             </Box>
@@ -58,18 +68,27 @@ const TrackCard = ({trackId}) => {
   }
 
 const TrackChoice = ({trackId}) => {
+    const theme = useTheme();
+    let iframeHeight = 80;
+    if (useMediaQuery(theme.breakpoints.up('md'))) {
+      iframeHeight += 72;
+    }
+    if (useMediaQuery(theme.breakpoints.up('xl'))) {
+      iframeHeight += 80;
+    }
+
     return (
-        <iframe
-          title='spotify-track'
-          style={{"border-radius": "12px"}}
-          src={`https://open.spotify.com/embed/track/${trackId}`}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
+      <iframe
+        title='spotify-track'
+        style={{"border-radius": "12px"}}
+        src={`https://open.spotify.com/embed/track/${trackId}`}
+        width="100%"
+        height={iframeHeight}
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
     );
   }
 
