@@ -5,6 +5,7 @@ import Card from '@mui/material/Card';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -14,13 +15,23 @@ class App extends Component {
       <div>
         <Container>
           <Grid container sx={{height: '100vh'}} direction="column" justifyContent="space-around">
-            <Grid item>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
+              <Typography variant="h2">
+                Spotter
+              </Typography>
+            </Grid>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
+              <Typography variant="h4">
+                Predict which song will have more total listens in 2 weeks:
+              </Typography>
+            </Grid>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
               <TrackCard sx={{flexGrow: 1}} trackId='5LAUpU2KhoVDnur463CAuT'></TrackCard>
             </Grid>
-            <Grid item>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
               <TrackCard trackId='4JyZnltqvgBqTRLCMxj6Kk'></TrackCard>
             </Grid>
-            <Grid item alignSelf="center">
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1} alignSelf="center">
               <Button variant="contained" sx={{flex: 1}}>Contained</Button>
             </Grid>
           </Grid>
