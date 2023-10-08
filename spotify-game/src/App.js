@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -9,8 +9,7 @@ import Typography from '@mui/material/Typography';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div>
         <Container>
@@ -39,15 +38,14 @@ class App extends Component {
       </div>
     );
   }
-}
 
-class TrackCard extends Component {
-  render() {
+
+const TrackCard = ({trackId}) => {
     return <Card raised={true}>
         <Grid container alignItems="center" justifyContent="center">
           <Grid item xs={10}>
             <Box sx={{my: 5, ml: 5}}>
-              <TrackChoice trackId={this.props.trackId}></TrackChoice>
+              <TrackChoice trackId={trackId}></TrackChoice>
             </Box>
           </Grid>
           <Grid item xs={2}>
@@ -58,15 +56,13 @@ class TrackCard extends Component {
         </Grid>
     </Card>
   }
-}
 
-class TrackChoice extends Component {
-  render() {
+const TrackChoice = ({trackId}) => {
     return (
         <iframe
           title='spotify-track'
           style={{"border-radius": "12px"}}
-          src={`https://open.spotify.com/embed/track/${this.props.trackId}`}
+          src={`https://open.spotify.com/embed/track/${trackId}`}
           width="100%"
           height="100%"
           frameBorder="0"
@@ -76,6 +72,5 @@ class TrackChoice extends Component {
         ></iframe>
     );
   }
-}
 
 export default App;
