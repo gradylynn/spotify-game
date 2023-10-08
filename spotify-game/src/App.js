@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -12,16 +12,18 @@ class App extends Component {
   render() {
     return (
       <div>
-        <p>Hello world!</p>
         <Container>
-          <Box sx={{ my: 5, ml: 5, backgroundColor: 'red', flexgrow: 1}}>
-            <Box sx={{ m: 5}}>
-              <TrackCard trackId='5LAUpU2KhoVDnur463CAuT'></TrackCard>
-            </Box>
-            <Box sx={{ m: 5}}>
+          <Grid container sx={{height: '100vh'}} direction="column" justifyContent="space-around">
+            <Grid item>
+              <TrackCard sx={{flexGrow: 1}} trackId='5LAUpU2KhoVDnur463CAuT'></TrackCard>
+            </Grid>
+            <Grid item>
               <TrackCard trackId='4JyZnltqvgBqTRLCMxj6Kk'></TrackCard>
-            </Box>
-          </Box>
+            </Grid>
+            <Grid item alignSelf="center">
+              <Button variant="contained" sx={{flex: 1}}>Contained</Button>
+            </Grid>
+          </Grid>
         </Container>
       </div>
     );
@@ -30,17 +32,15 @@ class App extends Component {
 
 class TrackCard extends Component {
   render() {
-    return <Card
-      raised={true}
-    >
+    return <Card raised={true}>
         <Grid container alignItems="center" justifyContent="center">
           <Grid item xs={10}>
-            <Box sx={{ my: 5, ml: 5 }}>
+            <Box sx={{my: 5, ml: 5}}>
               <TrackChoice trackId={this.props.trackId}></TrackChoice>
             </Box>
           </Grid>
           <Grid item xs={2}>
-            <Box sx={{ m: 5 }}>
+            <Box sx={{m: 5}}>
               <Checkbox {...label} size="large"></Checkbox>
             </Box>
           </Grid>
