@@ -15,25 +15,25 @@ const App = () => {
     return (
       <div>
         <Container>
-          <Grid container sx={{height: '100vh'}} direction="column" justifyContent="space-around">
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
+          <Grid container sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
+            <Grid item xs={1}>
               <Typography variant="h2">
                 Spotter
               </Typography>
             </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
+            <Grid item xs={1}>
               <Typography variant="h4">
                 Predict which song will have more total listens in 2 weeks:
               </Typography>
             </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
+            <Grid item xs={1}>
               <TrackCard trackId='5LAUpU2KhoVDnur463CAuT'></TrackCard>
             </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
+            <Grid item xs={1}>
               <TrackCard trackId='4JyZnltqvgBqTRLCMxj6Kk'></TrackCard>
             </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1} alignSelf="center">
-              <Button variant="contained">Contained</Button>
+            <Grid item xs={1} alignSelf="center">
+              <Button variant="contained">Submit</Button>
             </Grid>
           </Grid>
         </Container>
@@ -43,25 +43,27 @@ const App = () => {
 
 
 const TrackCard = ({trackId}) => {
-      return <Card raised={true} sx={{
-        height: {
-          xs: 160,
-          sm: 160,
-          md: 252,
-          lg: 252,
-          xl: 300,
-        },
-      }}>
-        <Grid container>
+      const cardHeights = {
+        xs: 120,
+        sm: 120,
+        md: 210,
+        lg: 210,
+        xl: 300,
+      }
+
+      return <Card raised={true} sx={{height: cardHeights}}>
+        <Grid container sx={{height: cardHeights}} alignItems="center">
           <Grid item xs={10}>
-            <Box sx={{my: 5, ml: 5}}>
+            <Box sx={{ml: {xs: 20/8, sm: 20/8, md: 29/8, lg: 29/8, xl: 34/8}, mr: 0}}>
               <TrackChoice trackId={trackId}></TrackChoice>
             </Box>
           </Grid>
-          <Grid item xs={2} alignSelf='center'>
-            <Box sx={{m: 5}}>
-              <Checkbox {...label} size="large"></Checkbox>
-            </Box>
+          <Grid item xs={2}>
+            <Grid container justifyContent="center">
+              <Grid item>
+                <Checkbox {...label} size="large"></Checkbox>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
     </Card>
