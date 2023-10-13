@@ -10,8 +10,6 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
 const App = () => {
   const [selection, setSelection] = useState(0);
 
@@ -30,13 +28,21 @@ const App = () => {
             </Typography>
           </Grid>
           <Grid item xs={1}>
-            <TrackCard trackId='5LAUpU2KhoVDnur463CAuT' isSelected={true}></TrackCard>
+            <TrackCard
+              trackId='5LAUpU2KhoVDnur463CAuT'
+              isSelected={selection===1}
+              checkCallback={() => {setSelection(1)}}
+            ></TrackCard>
           </Grid>
           <Grid item xs={1}>
-            <TrackCard trackId='4JyZnltqvgBqTRLCMxj6Kk' isSelected={false}></TrackCard>
+            <TrackCard
+              trackId='4JyZnltqvgBqTRLCMxj6Kk'
+              isSelected={selection===2}
+              checkCallback={() => {setSelection(2)}}
+            ></TrackCard>
           </Grid>
           <Grid item xs={1} alignSelf="center">
-            <Button variant="contained">Submit</Button>
+            <Button variant="contained" disabled={selection===0}>Submit</Button>
           </Grid>
         </Grid>
       </Container>
@@ -45,7 +51,7 @@ const App = () => {
 }
 
 
-const TrackCard = ({trackId, isSelected}) => {
+const TrackCard = ({trackId, isSelected, checkCallback}) => {
     const cardHeights = {
       xs: 120,
       sm: 120,
@@ -54,9 +60,7 @@ const TrackCard = ({trackId, isSelected}) => {
       xl: 300,
     }
 
-    // const [selected, setSelected] = useState(true);
-
-    return <Card raised={isSelected} sx={{height: cardHeights, backgroundColor: isSelected ? '#DCFEFD': '#FFFFFF'}}>
+    return <Card raised={isSelected} sx={{height: cardHeights, backgroundColor: isSelected ? '#EBFCFD': '#FFFFFF'}}>
       <Grid container sx={{height: cardHeights}} alignItems="center">
         <Grid item xs={10}>
           <Box sx={{ml: {xs: 20/8, sm: 20/8, md: 29/8, lg: 29/8, xl: 34/8}, mr: 0}}>
@@ -66,7 +70,7 @@ const TrackCard = ({trackId, isSelected}) => {
         <Grid item xs={2}>
           <Grid container justifyContent="center">
             <Grid item>
-              <Checkbox {...label} size="large"></Checkbox>
+              <Checkbox checked={isSelected} onChange={checkCallback} size="large"></Checkbox>
             </Grid>
           </Grid>
         </Grid>
@@ -99,6 +103,6 @@ const TrackChoice = ({trackId}) => {
   );
 }
 
-document.body.style = 'background: #FFFEC8;';
+document.body.style = 'background: #FDFCEB;';
 
 export default App;
