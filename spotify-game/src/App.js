@@ -7,25 +7,30 @@ import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
 const App = () => {
   const [selection, setSelection] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <div backgroundColor='blue'>
       <Container>
+        <Modal open={submitted}>
+          <Box>you chose track number {selection}</Box>
+        </Modal>
         <Grid container spacing={2} sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
           <Grid item xs={1}>
-            <Typography variant="h2">
-              Spotter
-            </Typography>
-          </Grid>
-          <Grid item xs={1}>
-            <Typography variant="h4">
-              Predict which song will have more total listens in 2 weeks:
-            </Typography>
+            <Box sx={{mt: 6}}>
+              <Typography variant="h2" align='center'>
+                The Daily Spot
+              </Typography>
+              <Typography variant="h4" align='center'>
+                Which song will have more total listens in 2 weeks?
+              </Typography>
+            </Box>
           </Grid>
           <Grid item xs={1}>
             <TrackCard
@@ -42,7 +47,13 @@ const App = () => {
             ></TrackCard>
           </Grid>
           <Grid item xs={1} alignSelf="center">
-            <Button variant="contained" disabled={selection===0}>Submit</Button>
+            <Button
+              variant="contained"
+              disabled={selection===0}
+              onClick={() => {setSubmitted(true)}}
+            >
+              Submit Prediction
+            </Button>
           </Grid>
         </Grid>
       </Container>
@@ -60,7 +71,13 @@ const TrackCard = ({trackId, isSelected, checkCallback}) => {
       xl: 300,
     }
 
-    return <Card raised={isSelected} sx={{height: cardHeights, backgroundColor: isSelected ? '#EBFCFD': '#FFFFFF'}}>
+    return <Card
+      raised={isSelected}
+      sx={{
+        height: cardHeights,
+        backgroundColor: isSelected ? '#EBFCFD': '#FFFFFF'
+      }}
+    >
       <Grid container sx={{height: cardHeights}} alignItems="center">
         <Grid item xs={10}>
           <Box sx={{ml: {xs: 20/8, sm: 20/8, md: 29/8, lg: 29/8, xl: 34/8}, mr: 0}}>
