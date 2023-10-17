@@ -10,16 +10,17 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import ResultsScroll from './ResultsScroll';
 
 const App = () => {
   const [selection, setSelection] = useState(0);
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div backgroundColor='blue'>
+    <div>
       <Container>
-        <Modal open={submitted}>
-          <Box>you chose track number {selection}</Box>
+        <Modal open={submitted} onClose={() => {setSubmitted(false)}}>
+          <ResultsScroll selection={selection}></ResultsScroll>
         </Modal>
         <Grid container spacing={2} sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
           <Grid item xs={1}>
@@ -36,6 +37,7 @@ const App = () => {
             <TrackCard
               trackId='5LAUpU2KhoVDnur463CAuT'
               isSelected={selection===1}
+              isEnabled={!submitted}
               checkCallback={() => {setSelection(1)}}
             ></TrackCard>
           </Grid>
@@ -43,13 +45,14 @@ const App = () => {
             <TrackCard
               trackId='4JyZnltqvgBqTRLCMxj6Kk'
               isSelected={selection===2}
+              isEnabled={!submitted}
               checkCallback={() => {setSelection(2)}}
             ></TrackCard>
           </Grid>
           <Grid item xs={1} alignSelf="center">
             <Button
               variant="contained"
-              disabled={selection===0}
+              disabled={selection===0 || submitted}
               onClick={() => {setSubmitted(true)}}
             >
               Submit Prediction
@@ -62,7 +65,7 @@ const App = () => {
 }
 
 
-const TrackCard = ({trackId, isSelected, checkCallback}) => {
+const TrackCard = ({trackId, isSelected, isEnabled, checkCallback}) => {
     const cardHeights = {
       xs: 120,
       sm: 120,
@@ -75,7 +78,10 @@ const TrackCard = ({trackId, isSelected, checkCallback}) => {
       raised={isSelected}
       sx={{
         height: cardHeights,
-        backgroundColor: isSelected ? '#EBFCFD': '#FFFFFF'
+        borderRadius: 5,
+        backgroundColor: isSelected ? '#EBFCFD' : '#FFFFFF',
+        border: isSelected ? 2 : 0,
+        borderColor: isEnabled ? 'black' : '#0b8500'
       }}
     >
       <Grid container sx={{height: cardHeights}} alignItems="center">
@@ -87,7 +93,7 @@ const TrackCard = ({trackId, isSelected, checkCallback}) => {
         <Grid item xs={2}>
           <Grid container justifyContent="center">
             <Grid item>
-              <Checkbox checked={isSelected} onChange={checkCallback} size="large"></Checkbox>
+              <Checkbox checked={isSelected} onChange={checkCallback} disabled={!isEnabled} size="large"></Checkbox>
             </Grid>
           </Grid>
         </Grid>
