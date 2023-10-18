@@ -1,3 +1,5 @@
+Using this for gh-pages deployment rn: https://github.com/gitname/react-gh-pages
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
