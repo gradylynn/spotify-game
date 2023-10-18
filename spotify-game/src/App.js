@@ -20,7 +20,7 @@ const App = () => {
     <div>
       <Container>
         <Modal open={submitted} onClose={() => {setSubmitted(false)}}>
-          <ResultsScroll selection={selection}></ResultsScroll>
+          <ResultsScroll selection={selection}/>
         </Modal>
         <Grid container spacing={2} sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
           <Grid item xs={1}>
@@ -39,7 +39,7 @@ const App = () => {
               isSelected={selection===1}
               isEnabled={!submitted}
               checkCallback={() => {setSelection(1)}}
-            ></TrackCard>
+            />
           </Grid>
           <Grid item xs={1}>
             <TrackCard
@@ -47,7 +47,7 @@ const App = () => {
               isSelected={selection===2}
               isEnabled={!submitted}
               checkCallback={() => {setSelection(2)}}
-            ></TrackCard>
+            />
           </Grid>
           <Grid item xs={1} alignSelf="center">
             <Button
@@ -93,7 +93,7 @@ const TrackCard = ({trackId, isSelected, isEnabled, checkCallback}) => {
         <Grid item xs={2}>
           <Grid container justifyContent="center">
             <Grid item>
-              <Checkbox checked={isSelected} onChange={checkCallback} disabled={!isEnabled} size="large"></Checkbox>
+              <Checkbox checked={isSelected} onChange={checkCallback} disabled={!isEnabled} size="large"/>
             </Grid>
           </Grid>
         </Grid>
