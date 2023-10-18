@@ -15,11 +15,12 @@ import ResultsScroll from './ResultsScroll';
 const App = () => {
   const [selection, setSelection] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [showResults, setShowResults] = useState(false);
 
   return (
     <div>
       <Container>
-        <Modal open={submitted} onClose={() => {setSubmitted(false)}}>
+        <Modal open={showResults} onClose={() => {setShowResults(false)}}>
           <ResultsScroll selection={selection}/>
         </Modal>
         <Grid container spacing={2} sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
@@ -52,10 +53,10 @@ const App = () => {
           <Grid item xs={1} alignSelf="center">
             <Button
               variant="contained"
-              disabled={selection===0 || submitted}
-              onClick={() => {setSubmitted(true)}}
+              disabled={selection===0}
+              onClick={() => {setSubmitted(true); setShowResults(true);}}
             >
-              Submit Prediction
+              {submitted ? 'View Results' : 'Submit Prediction'}
             </Button>
           </Grid>
         </Grid>
