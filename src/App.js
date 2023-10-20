@@ -2,15 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import ResultsScroll from './ResultsScroll';
+import TrackCard from './TrackCard';
+
+import trackIds from './track_ids.json';
+let id1 = trackIds[Math.floor(Math.random()*trackIds.length)]
+let id2 = trackIds[Math.floor(Math.random()*trackIds.length)]
 
 const App = () => {
   const [selection, setSelection] = useState(0);
@@ -30,13 +31,13 @@ const App = () => {
                 The Daily Spot
               </Typography>
               <Typography variant="h4" align='center'>
-                Which song will have more total listens in 2 weeks?
+                Which song will have more total Spotify listens in 2 weeks?
               </Typography>
             </Box>
           </Grid>
           <Grid item xs={1}>
             <TrackCard
-              trackId='5LAUpU2KhoVDnur463CAuT'
+              trackId={id1}
               isSelected={selection===1}
               isEnabled={!submitted}
               checkCallback={() => {setSelection(1)}}
@@ -44,7 +45,7 @@ const App = () => {
           </Grid>
           <Grid item xs={1}>
             <TrackCard
-              trackId='4JyZnltqvgBqTRLCMxj6Kk'
+              trackId={id2}
               isSelected={selection===2}
               isEnabled={!submitted}
               checkCallback={() => {setSelection(2)}}
@@ -62,68 +63,6 @@ const App = () => {
         </Grid>
       </Container>
     </div>
-  );
-}
-
-
-const TrackCard = ({trackId, isSelected, isEnabled, checkCallback}) => {
-    const cardHeights = {
-      xs: 120,
-      sm: 120,
-      md: 210,
-      lg: 210,
-      xl: 300,
-    }
-
-    return <Card
-      raised={isSelected}
-      sx={{
-        height: cardHeights,
-        borderRadius: 5,
-        backgroundColor: isSelected ? '#EBFCFD' : '#FFFFFF',
-        border: isSelected ? 2 : 0,
-        borderColor: isEnabled ? 'black' : '#0b8500'
-      }}
-    >
-      <Grid container sx={{height: cardHeights}} alignItems="center">
-        <Grid item xs={10}>
-          <Box sx={{ml: {xs: 20/8, sm: 20/8, md: 29/8, lg: 29/8, xl: 34/8}, mr: 0}}>
-            <TrackChoice trackId={trackId}></TrackChoice>
-          </Box>
-        </Grid>
-        <Grid item xs={2}>
-          <Grid container justifyContent="center">
-            <Grid item>
-              <Checkbox checked={isSelected} onChange={checkCallback} disabled={!isEnabled} size="large"/>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-  </Card>
-}
-
-const TrackChoice = ({trackId}) => {
-  const theme = useTheme();
-  let iframeHeight = 80;
-  if (useMediaQuery(theme.breakpoints.up('md'))) {
-    iframeHeight += 72;
-  }
-  if (useMediaQuery(theme.breakpoints.up('xl'))) {
-    iframeHeight += 80;
-  }
-
-  return (
-    <iframe
-      title='spotify-track'
-      style={{"border-radius": "12px"}}
-      src={`https://open.spotify.com/embed/track/${trackId}`}
-      width="100%"
-      height={iframeHeight}
-      frameBorder="0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    ></iframe>
   );
 }
 

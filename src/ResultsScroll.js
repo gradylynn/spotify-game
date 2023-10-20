@@ -2,9 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
-import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
 import { CardContent, CardHeader, List, ListItem } from '@mui/material';
+import TrackCard from './TrackCard';
+
+import trackIds from './track_ids.json';
 
 const ResultsScroll = ({selection}) => {
   return <Card sx={{
@@ -19,20 +20,15 @@ const ResultsScroll = ({selection}) => {
       transform: 'translate(-50%, -50%)'
   }}>
     <CardHeader sx={{height: '7vh', p: 0, pt: 2}}
-      // action={
-      //   <IconButton aria-label="settings">
-      //     <CloseIcon />
-      //   </IconButton>
-      // }
       title={`You chose song number ${selection}`}
       titleTypographyProps={
         {
           fontSize: {
             xs: "max(20px, 3vh)",
-            sm: "3vh",
-            md: "4vh",
-            lg: "4vh",
-            xl: "5vh",
+            sm: "max(20px, 3vh)",
+            md: "max(20px, 4vh)",
+            lg: "max(20px, 4vh)",
+            xl: "max(20px, 5vh)",
           },
           align: 'center',
           whiteSpace: 'nowrap'
@@ -50,7 +46,7 @@ const ResultsScroll = ({selection}) => {
       <Grid container sx={{height: '73vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
         <Grid item xs={11}>
           <Box sx={{border: 1, mx: 3, p: 0, height: '65vh', overflow: 'auto'}}>
-            <List>
+            <List disablePadding>
               {aBunchOfListItems()}
             </List>
           </Box>
@@ -60,10 +56,43 @@ const ResultsScroll = ({selection}) => {
   </Card>;
 }
 
+const ResultItem = ({}) => {
+  let rand = Math.random()
+  return <ListItem disablePadding>
+    <Grid container sx={{
+      height: {
+        xs: 300,
+        sm: 300,
+        md: 160,
+        lg: 160,
+        xl: 160,
+      },
+      borderBottom: 1
+    }} justifyContent='space-around' alignItems='center'>
+      <Grid item xs={10} md={5}>
+        <TrackCard
+          forceSmall
+          trackId={trackIds[Math.floor(Math.random()*trackIds.length)]}
+          isSelected={rand < 0.5}
+          isEnabled={false}
+        />
+      </Grid>
+      <Grid item xs={10} md={5}>
+        <TrackCard
+          forceSmall
+          trackId={trackIds[Math.floor(Math.random()*trackIds.length)]}
+          isSelected={rand > 0.5}
+          isEnabled={false}
+        />
+      </Grid>
+    </Grid>
+  </ListItem>
+}
+
 const aBunchOfListItems = () => {
   let items = []
-  for (let i = 0; i < 100; i++){
-    items[i] = <ListItem>{`potato ${i}`}</ListItem>
+  for (let i = 0; i < 10; i++){
+    items[i] = <ResultItem/>
   }
   return items
 }
