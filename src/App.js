@@ -9,9 +9,7 @@ import Modal from '@mui/material/Modal';
 import ResultsScroll from './ResultsScroll';
 import TrackCard from './TrackCard';
 
-import trackIds from './track_ids.json';
-let id1 = trackIds[Math.floor(Math.random()*trackIds.length)]
-let id2 = trackIds[Math.floor(Math.random()*trackIds.length)]
+import tracks from './tracks.json';
 
 const App = () => {
   const [selection, setSelection] = useState(0);
@@ -37,7 +35,7 @@ const App = () => {
           </Grid>
           <Grid item xs={1}>
             <TrackCard
-              trackId={id1}
+              trackId={tracks[0]['track1Id']}
               isSelected={selection===1}
               isEnabled={!submitted}
               checkCallback={() => {setSelection(1)}}
@@ -45,7 +43,7 @@ const App = () => {
           </Grid>
           <Grid item xs={1}>
             <TrackCard
-              trackId={id2}
+              trackId={tracks[0]['track2Id']}
               isSelected={selection===2}
               isEnabled={!submitted}
               checkCallback={() => {setSelection(2)}}
