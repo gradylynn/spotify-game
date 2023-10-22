@@ -37,22 +37,22 @@ const ResultsScroll = ({selection}) => {
       left: '50%',
       transform: 'translate(-50%, -50%)'
   }}>
-    <CardHeader sx={{height: '7vh', p: 0, pt: 2}}
-      title={`You chose song number ${selection}`}
+    <CardHeader sx={{height: '5vh', p: 0, pt: 2}}
+      title='Thanks for playing!'
       titleTypographyProps={
         {
           fontSize: {
-            xs: "max(20px, 3vh)",
-            sm: "max(20px, 3vh)",
-            md: "max(20px, 4vh)",
-            lg: "max(20px, 4vh)",
-            xl: "max(20px, 5vh)",
+            xs: "max(20px, 1vh)",
+            sm: "max(20px, 1vh)",
+            md: "max(20px, 2vh)",
+            lg: "max(20px, 2vh)",
+            xl: "max(20px, 3vh)",
           },
           align: 'center',
           whiteSpace: 'nowrap'
         }
       }
-      subheader='Here are the results from previous days:'
+      subheader='Here are your results:'
       subheaderTypographyProps={
         {
           fontSize: "max(15px, 2vh)",
@@ -61,9 +61,9 @@ const ResultsScroll = ({selection}) => {
       }
     />
     <CardContent sx={{p: 0}}>
-      <Grid container sx={{height: '73vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
+      <Grid container sx={{py: 2}} direction="column" justifyContent="space-around" wrap="nowrap">
         <Grid item xs={11}>
-          <Box sx={{border: 1, mx: 3, p: 0, height: '65vh', overflow: 'auto'}}>
+          <Box sx={{border: 1, mx: 3, p: 0, height: '68vh', overflow: 'auto'}}>
             <List disablePadding>
               {aBunchOfListItems()}
             </List>
