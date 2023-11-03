@@ -10,16 +10,14 @@ import Modal from '@mui/material/Modal';
 import ResultsScroll from './ResultsScroll';
 import TrackCard from './TrackCard';
 
-import Cookies from 'js-cookie';
-
 import tracks from './tracks.json';
-
-let cookieSelection = parseInt(Cookies.get('selection'));
+import {submitSelection, getTodaysSelection} from './utilities';
 
 const App = () => {
-  const [selection, setSelection] = useState(cookieSelection ? cookieSelection : 0);
-  const [submitted, setSubmitted] = useState(Boolean(cookieSelection));
-  const [showResults, setShowResults] = useState(Boolean(cookieSelection));
+  let todaysSelection = getTodaysSelection();
+  const [selection, setSelection] = useState(todaysSelection);
+  const [submitted, setSubmitted] = useState(Boolean(todaysSelection));
+  const [showResults, setShowResults] = useState(Boolean(todaysSelection));
 
   return (
     <div>
@@ -49,24 +47,30 @@ const App = () => {
           <Grid item xs={1}>
             <TrackCard
               trackId={tracks[0]['track1Id']}
-              isSelected={selection===1}
+              isSelected={selection==='1'}
               isEnabled={!submitted}
-              checkCallback={() => {setSelection(1)}}
+              checkCallback={() => {setSelection('1')}}
             />
           </Grid>
           <Grid item xs={1}>
             <TrackCard
               trackId={tracks[0]['track2Id']}
-              isSelected={selection===2}
+              isSelected={selection==='2'}
               isEnabled={!submitted}
-              checkCallback={() => {setSelection(2)}}
+              checkCallback={() => {setSelection('2')}}
             />
           </Grid>
           <Grid item xs={1} alignSelf="center">
             <Button
               variant="contained"
-              disabled={selection===0}
-              onClick={() => {setSubmitted(true); setShowResults(true); Cookies.set('selection', selection);}}
+              disabled={selection==='0'}
+              onClick={() => {
+                if (!submitted) {
+                  setSubmitted(true);
+                  submitSelection(selection);
+                }
+                setShowResults(true);
+              }}
             >
               {submitted ? 'View Results' : 'Submit Prediction'}
             </Button>

@@ -5,32 +5,20 @@ import Grid from '@mui/material/Grid';
 import { CardContent, CardHeader, List, ListItem, Typography } from '@mui/material';
 import TrackCard from './TrackCard';
 
-import tracks from './tracks.json';
+import {getResultsData} from './utilities'
 
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-]
-
-const today = new Date('1970-01-10T00:00:00');
-const yesterday = new Date('1970-01-09T00:00:00');
-
-const ResultsScroll = ({selection}) => {
+const ResultsScroll = () => {
   return <Card sx={{
       borderRadius: 5,
       backgroundColor: '#fffef7',
-      height: '80vh',
-      width: '80vw',
+      height: {
+        xs: "90vh",
+        md: "80vh",
+      },
+      width: {
+        xs: "90vw",
+        md: "80vw",
+      },
       minHeight: '1000',
       position: 'absolute',
       top: '50%',
@@ -62,8 +50,8 @@ const ResultsScroll = ({selection}) => {
     />
     <CardContent sx={{p: 0}}>
       <Grid container sx={{py: 2}} direction="column" justifyContent="space-around" wrap="nowrap">
-        <Grid item xs={11}>
-          <Box sx={{border: 1, mx: 3, p: 0, height: '68vh', overflow: 'auto'}}>
+        <Grid item xs={12}>
+          <Box sx={{border: 1, mx: 3, p: 0, height: {xs: "74vh", md: "68vh"}, overflow: 'auto'}}>
             <List disablePadding>
               {aBunchOfListItems()}
             </List>
@@ -80,50 +68,28 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
     md: 160,
   };
 
-  let d = new Date(date + 'T00:00:00');
-
-  let dateString;
-  if (
-    today.getDate()===d.getDate() &&
-    today.getMonth()===d.getMonth() &&
-    today.getFullYear()===d.getFullYear()
-  ) {
-    dateString = 'Today';
-  }
-  else if (
-    yesterday.getDate()===d.getDate() &&
-    yesterday.getMonth()===d.getMonth() &&
-    yesterday.getFullYear()===d.getFullYear()
-  ) {
-    dateString = 'Yesterday';
-  }
-  else {
-    dateString = `${months[d.getMonth()]} ${d.getDate()}`
-  }
-
-  let thing = <Card container sx={{
-    backgroundColor: 'lightblue',
-    width: {
-      xs: 240,
-      md: 140,
-    },
-    transform: {
-      xs: 'rotate(270deg) translate(0, -97px)',
-      md: 'rotate(270deg) translate(0, -42px)',
-    },
-    }}>
-      <Typography variant='h6' align='center'>
-       {dateString}
-      </Typography>
-  </Card>
-
   return <Grid container sx={{
-    height: heights
+      height: heights,
+      // backgroundColor: 'red'
     }} columns={30} justifyContent='space-between' alignItems='center'>
-      <Grid item xs={1}>
-        {thing}
+      <Grid item xs={5} md={1}>
+        <Card container sx={{
+          backgroundColor: 'lightblue',
+          width: {
+            xs: 240,
+            md: 140,
+          },
+          transform: {
+            xs: '',
+            md: 'rotate(270deg) translate(0, -42px)',
+          },
+          }}>
+            <Typography variant='h6' align='center'>
+              {date}
+            </Typography>
+        </Card>
       </Grid>
-      <Grid item xs={29}>
+      <Grid item xs={26} md={29}>
         <Grid container sx={{
           height: heights
           }} justifyContent='space-around' alignItems='center'>
@@ -131,7 +97,7 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
             <TrackCard
               forceSmall
               trackId={track1Id}
-              isSelected={selection===1}
+              isSelected={selection==='1'}
               isEnabled={false}
             />
           </Grid>
@@ -139,7 +105,7 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
             <TrackCard
               forceSmall
               trackId={track2Id}
-              isSelected={selection===2}
+              isSelected={selection==='2'}
               isEnabled={false}
             />
           </Grid>
@@ -149,14 +115,15 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
 }
 
 const aBunchOfListItems = () => {
+  let tracks = getResultsData();
+  console.log(tracks);
   let items = []
   for (let i = 0; i < tracks.length; i++) {
-    let rand = Math.random()
     items.push(
       <ListItem disablePadding sx={{borderBottom: i===(tracks.length-1) ? 0 : 1}}>
         <Result
-          date={tracks[i]['date']}
-          selection={rand < .34 ? 0 : (rand > .66 ? 1 : 2)}
+          date={tracks[i]['dateStr']}
+          selection={tracks[i]['selection']}
           track1Id={tracks[i]['track1Id']}
           track2Id={tracks[i]['track2Id']}
         />
