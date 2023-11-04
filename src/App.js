@@ -63,7 +63,7 @@ const App = () => {
           <Grid item xs={1} alignSelf="center">
             <Button
               variant="contained"
-              disabled={selection==='0'}
+              disabled={typeof selection === 'undefined'}
               onClick={() => {
                 if (!submitted) {
                   setSubmitted(true);

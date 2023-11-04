@@ -28,7 +28,7 @@ YESTERDAY.setDate(YESTERDAY.getDate() - 1);
 
 // NOTE: this block here is just for testing
 if (!Cookies.get('selections')) {
-    Cookies.set('selections', '1');
+    Cookies.set('selections', '012201211');
     Cookies.set('lastSelectionDate', (new Date('1970-01-09T00:00:00')).getTime());
 }
 
