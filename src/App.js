@@ -23,21 +23,21 @@ const App = () => {
     <div>
       <Container>
         <Modal open={showResults} onClose={() => {setShowResults(false)}}>
-          <ResultsScroll selection={selection}/>
+          <ResultsScroll closeFunc={() => {setShowResults(false)}}/>
         </Modal>
         <Grid container spacing={2} sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
           <Grid item xs={1}>
             <Box sx={{mt: 6}}>
               <Typography variant="h2" align='center' sx={{
                 fontSize: {
-                xs: "50px",
+                xs: "45px",
                 md: "60px",
               }}}>
                 The Daily Spot
               </Typography>
               <Typography variant="h4" align='center'sx={{
                 fontSize: {
-                xs: "24px",
+                xs: "20px",
                 md: "35px",
               }}}>
                 Which song will have more total Spotify listens in 2 weeks?

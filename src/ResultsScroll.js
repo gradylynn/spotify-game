@@ -3,11 +3,14 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import { CardContent, CardHeader, List, ListItem, Typography } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
 import TrackCard from './TrackCard';
 
 import {getResultsData} from './utilities'
 
-const ResultsScroll = () => {
+const ResultsScroll = ({closeFunc}) => {
   return <Card sx={{
       borderRadius: 5,
       backgroundColor: '#fffef7',
@@ -25,7 +28,7 @@ const ResultsScroll = () => {
       left: '50%',
       transform: 'translate(-50%, -50%)'
   }}>
-    <CardHeader sx={{height: '5vh', p: 0, pt: 2}}
+    <CardHeader sx={{height: '5vh', p: 0, pt: 2, transform: 'translate(15px, 0)'}}
       title='Thanks for playing!'
       titleTypographyProps={
         {
@@ -47,11 +50,16 @@ const ResultsScroll = () => {
           align: 'center'
         }
       }
+      action={
+        <IconButton onClick={closeFunc} sx={{transform: 'translate(-28px, 0)'}}>
+          <CloseIcon/>
+        </IconButton>
+      }
     />
     <CardContent sx={{p: 0}}>
       <Grid container sx={{py: 2}} direction="column" justifyContent="space-around" wrap="nowrap">
         <Grid item xs={12}>
-          <Box sx={{border: 1, mx: 3, p: 0, height: {xs: "74vh", md: "68vh"}, overflow: 'auto'}}>
+          <Box sx={{border: 1, mx: {xs: 2, md: 3}, p: 0, height: {xs: "74vh", md: "68vh"}, overflow: 'auto'}}>
             <List disablePadding>
               {aBunchOfListItems()}
             </List>
@@ -63,37 +71,41 @@ const ResultsScroll = () => {
 }
 
 const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Playcount, finalized}) => {
-  const heights = {
-    xs: 300,
-    md: 160,
-  };
-
   return <Grid container sx={{
-      height: heights,
-      // backgroundColor: 'red'
+      height: {
+        xs: 340,
+        md: 160,
+      },
     }} columns={30} justifyContent='space-between' alignItems='center'>
-      <Grid item xs={5} md={1}>
-        <Card container sx={{
-          backgroundColor: 'lightblue',
-          width: {
-            xs: 240,
-            md: 140,
-          },
-          transform: {
-            xs: '',
-            md: 'rotate(270deg) translate(0, -42px)',
-          },
-          }}>
-            <Typography variant='h6' align='center'>
-              {date}
-            </Typography>
-        </Card>
+      <Grid item xs={30} md={1} justifyItems='center'>
+        <Grid container alignItems='center' justifyContent='space-around' direction='column'>
+          <Grid item>
+            <Card sx={{
+              backgroundColor: 'lightblue',
+              width: {
+                xs: 160,
+                md: 140,
+              },
+              transform: {
+                xs: 'translate(0, 4px)',
+                md: 'rotate(270deg) translate(0, -42px)',
+              },
+              }}>
+                <Typography variant='h6' align='center'>
+                  {date}
+                </Typography>
+            </Card>
+          </Grid>
+        </Grid>
       </Grid>
-      <Grid item xs={26} md={29}>
+      <Grid item xs={30} md={29}>
         <Grid container sx={{
-          height: heights
-          }} justifyContent='space-around' alignItems='center'>
-          <Grid item xs={10} md={5}>
+          height: {
+            xs: 290,
+            md: 160,
+          }
+          }} columns={40} justifyContent='space-around' alignItems='center'>
+          <Grid item xs={38} md={18}>
             <TrackCard
               forceSmall
               trackId={track1Id}
@@ -101,7 +113,7 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
               isEnabled={false}
             />
           </Grid>
-          <Grid item xs={10} md={5}>
+          <Grid item xs={38} md={18}>
             <TrackCard
               forceSmall
               trackId={track2Id}
@@ -116,7 +128,6 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
 
 const aBunchOfListItems = () => {
   let tracks = getResultsData();
-  console.log(tracks);
   let items = []
   for (let i = 0; i < tracks.length; i++) {
     items.push(
