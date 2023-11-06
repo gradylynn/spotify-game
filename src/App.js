@@ -35,7 +35,7 @@ const App = () => {
               }}}>
                 The Daily Spot
               </Typography>
-              <Typography variant="h4" align='center'sx={{
+              <Typography variant="h4" align='center' sx={{
                 fontSize: {
                 xs: "20px",
                 md: "35px",
@@ -81,6 +81,6 @@ const App = () => {
   );
 }
 
-document.body.style = 'background: #FDFCEB;';
+document.body.style = 'background: #FFFDDD;';
 
 export default App;

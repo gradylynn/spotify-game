@@ -2,12 +2,13 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall}) => {
+const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall, numListens}) => {
     const cardHeights = {
-      xs: 120,
+      xs: 112,
       sm: 120,
       md: 210,
       lg: 210,
@@ -17,7 +18,7 @@ const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall}) 
     return <Card
       raised={isSelected}
       sx={{
-        height: forceSmall ? 120 : cardHeights,
+        height: forceSmall ? {xs: 112, sm: 120} : cardHeights,
         borderRadius: 5,
         backgroundColor: isSelected ? '#EBFCFD' : '#FFFFFF',
         border: isSelected ? 2 : 0,
@@ -27,22 +28,34 @@ const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall}) 
       <Grid container sx={{height: forceSmall ? 120 : cardHeights}} alignItems="center">
         <Grid item xs={10}>
           <Box sx={{
-            ml: forceSmall ? 20/8 : {
-              xs: 20/8,
+            ml: forceSmall ? {
+              xs: 16/8,
+              sm: 20/8,
+            } : {
+              xs: 16/8,
               sm: 20/8,
               md: 29/8,
               lg: 29/8,
               xl: 34/8
-            }, mr: 0
+            },
+            mr: 0
           }}>
             <TrackFrame trackId={trackId} forceSmall={forceSmall}/>
+            
           </Box>
         </Grid>
         <Grid item xs={2}>
           <Grid container justifyContent="center">
             <Grid item>
               <Checkbox checked={isSelected} onChange={checkCallback} disabled={!isEnabled} size="large"/>
-            </Grid>
+              <Typography variant="h6" align='center' style={{whiteSpace: 'pre-line'}} sx={{
+                  fontSize: {
+                  xs: "11px",
+                  md: forceSmall ? "14px" : "18px",
+              }}}>
+                {numListens}
+              </Typography>
+            </Grid>            
           </Grid>
         </Grid>
       </Grid>
