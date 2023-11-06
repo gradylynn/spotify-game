@@ -22,7 +22,7 @@ const MONTHS = [
     'December'
 ];
 
-const TODAY = new Date('1970-01-10T00:00:00');
+const TODAY = new Date('1970-01-25T00:00:00');
 const YESTERDAY = new Date(TODAY);
 YESTERDAY.setDate(YESTERDAY.getDate() - 1);
 
