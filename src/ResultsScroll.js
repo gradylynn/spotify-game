@@ -147,7 +147,7 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
 const aBunchOfListItems = () => {
   let tracks = getResultsData();
   let items = []
-  for (let i = 0; i < tracks.length; i++) {
+  for (let i = 0; i < 10; i++) {
     items.push(
       <ListItem disablePadding sx={{borderBottom: i===(tracks.length-1) ? 0 : 1}}>
         <Result
