@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/spotify-game/static/css/main.e6c13ad2.css",
-    "main.js": "/spotify-game/static/js/main.fc1fb8ba.js",
+    "main.js": "/spotify-game/static/js/main.bbcc7f53.js",
     "static/js/787.d2000452.chunk.js": "/spotify-game/static/js/787.d2000452.chunk.js",
     "index.html": "/spotify-game/index.html",
     "main.e6c13ad2.css.map": "/spotify-game/static/css/main.e6c13ad2.css.map",
-    "main.fc1fb8ba.js.map": "/spotify-game/static/js/main.fc1fb8ba.js.map",
+    "main.bbcc7f53.js.map": "/spotify-game/static/js/main.bbcc7f53.js.map",
     "787.d2000452.chunk.js.map": "/spotify-game/static/js/787.d2000452.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.fc1fb8ba.js"
+    "static/js/main.bbcc7f53.js"
   ]
 }
