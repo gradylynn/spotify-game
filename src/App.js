@@ -40,7 +40,7 @@ const App = () => {
                 xs: "20px",
                 md: "35px",
               }}}>
-                Which song will have more total Spotify listens in 2 weeks?
+                Which currently has more Spotify listens?
               </Typography>
             </Box>
           </Grid>

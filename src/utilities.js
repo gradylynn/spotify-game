@@ -22,14 +22,18 @@ const MONTHS = [
     'December'
 ];
 
-const TODAY = new Date('1970-01-25T00:00:00');
+const NOW = new Date();
+NOW.setHours(NOW.getHours() + 8); // date cutoff will be 8 hrs after UTC midnight
+const TODAY = new Date(
+    `${NOW.getUTCFullYear()}-${String(NOW.getUTCMonth()).padStart(2, '0')}-${String(NOW.getUTCDate()).padStart(2, '0')}T00:00:00`
+);
 const YESTERDAY = new Date(TODAY);
 YESTERDAY.setDate(YESTERDAY.getDate() - 1);
 
 // NOTE: this block here is just for testing
 if (!Cookies.get('selections')) {
     Cookies.set('selections', '012201211');
-    Cookies.set('lastSelectionDate', (new Date('1970-01-09T00:00:00')).getTime());
+    Cookies.set('lastSelectionDate', (new Date('1970-01-24T00:00:00')).getTime());
 }
 
 // return today's selection using cookie data

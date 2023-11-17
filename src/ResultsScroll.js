@@ -71,18 +71,17 @@ const ResultsScroll = ({closeFunc}) => {
 }
 
 const playcountFormatter = (numPlays) => {
-  let numPlaysInt = parseInt(numPlays);
-  if (numPlaysInt < 10000) {
-    return `${numPlaysInt}\nListens`;
+  if (numPlays < 10000) {
+    return `${numPlays}\nListens`;
   }
-  else if (numPlaysInt < 1000000) {
-    return `${Math.round(numPlaysInt/100)/10}K\nListens`;
+  else if (numPlays < 1000000) {
+    return `${Math.round(numPlays/100)/10}K\nListens`;
   }
-  else if (numPlaysInt < 1000000000) {
-    return `${Math.round(numPlaysInt/100000)/10}M\nListens`;
+  else if (numPlays < 1000000000) {
+    return `${Math.round(numPlays/100000)/10}M\nListens`;
   }
-  else if (numPlaysInt < 1000000000000) {
-    return `${Math.round(numPlaysInt/100000000)/10}B\nListens`;
+  else if (numPlays < 1000000000000) {
+    return `${Math.round(numPlays/100000000)/10}B\nListens`;
   }
 }
 
@@ -126,8 +125,9 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
               forceSmall
               trackId={track1Id}
               numListens={playcountFormatter(track1Playcount)}
-              isSelected={selection==='1'}
               isEnabled={false}
+              isSelected={selection==='1'}
+              isCorrect={selection==='1' && track1Playcount >= track2Playcount}
             />
           </Grid>
           <Grid item xs={38} md={18}>
@@ -135,8 +135,9 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
               forceSmall
               trackId={track2Id}
               numListens={playcountFormatter(track2Playcount)}
-              isSelected={selection==='2'}
               isEnabled={false}
+              isSelected={selection==='2'}
+              isCorrect={selection==='2' && track1Playcount <= track2Playcount}
             />
           </Grid>
         </Grid>
@@ -154,9 +155,9 @@ const aBunchOfListItems = () => {
           date={tracks[i]['dateStr']}
           selection={tracks[i]['selection']}
           track1Id={tracks[i]['track1Id']}
-          track1Playcount={tracks[i]['track1Playcount']}
+          track1Playcount={parseInt(tracks[i]['track1Playcount'])}
           track2Id={tracks[i]['track2Id']}
-          track2Playcount={tracks[i]['track2Playcount']}
+          track2Playcount={parseInt(tracks[i]['track2Playcount'])}
         />
       </ListItem>
     )

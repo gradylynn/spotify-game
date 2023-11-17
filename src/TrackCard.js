@@ -3,10 +3,12 @@ import Card from '@mui/material/Card';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall, numListens}) => {
+const TrackCard = ({trackId, isEnabled, isSelected, isCorrect, checkCallback, forceSmall, numListens}) => {
     const cardHeights = {
       xs: 112,
       sm: 120,
@@ -20,9 +22,9 @@ const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall, n
       sx={{
         height: forceSmall ? {xs: 112, sm: 120} : cardHeights,
         borderRadius: 5,
-        backgroundColor: isSelected ? '#EBFCFD' : '#FFFFFF',
+        backgroundColor: !isSelected ? '#FFFFFF' : isEnabled || typeof isCorrect === 'undefined' ? '#EBFCFD' : isCorrect ? '#ecfdeb' : '#fdebef',
         border: isSelected ? 2 : 0,
-        borderColor: isEnabled ? 'black' : '#0b8500'
+        borderColor: isEnabled || typeof isCorrect === 'undefined' ? 'black' : isCorrect ? '#0b8500' : '#db0037'
       }}
     >
       <Grid container sx={{height: forceSmall ? 120 : cardHeights}} alignItems="center">
@@ -47,7 +49,13 @@ const TrackCard = ({trackId, isSelected, isEnabled, checkCallback, forceSmall, n
         <Grid item xs={2}>
           <Grid container justifyContent="center">
             <Grid item>
-              <Checkbox checked={isSelected} onChange={checkCallback} disabled={!isEnabled} size="large"/>
+              <Checkbox
+                checked={isSelected}
+                onChange={checkCallback}
+                disabled={!isEnabled}
+                size="large"
+                checkedIcon={!isEnabled && isCorrect===false ? <DisabledByDefaultIcon/> : <CheckBoxIcon/>}
+              />
               <Typography variant="h6" align='center' style={{whiteSpace: 'pre-line'}} sx={{
                   fontSize: {
                   xs: "11px",
