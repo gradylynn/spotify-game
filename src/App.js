@@ -10,14 +10,14 @@ import Modal from '@mui/material/Modal';
 import ResultsScroll from './ResultsScroll';
 import TrackCard from './TrackCard';
 
-import tracks from './tracks.json';
-import {submitSelection, getTodaysSelection} from './utilities';
+import {submitSelection, getTodaysTracks, getTodaysSelection} from './utilities';
 
 const App = () => {
   let todaysSelection = getTodaysSelection();
   const [selection, setSelection] = useState(todaysSelection);
   const [submitted, setSubmitted] = useState(Boolean(todaysSelection));
   const [showResults, setShowResults] = useState(Boolean(todaysSelection));
+  const todaysTracks = getTodaysTracks();
 
   return (
     <div>
@@ -46,7 +46,7 @@ const App = () => {
           </Grid>
           <Grid item xs={1}>
             <TrackCard
-              trackId={tracks[0]['track1Id']}
+              trackId={todaysTracks[0]}
               isSelected={selection==='1'}
               isEnabled={!submitted}
               checkCallback={() => {setSelection('1')}}
@@ -54,7 +54,7 @@ const App = () => {
           </Grid>
           <Grid item xs={1}>
             <TrackCard
-              trackId={tracks[0]['track2Id']}
+              trackId={todaysTracks[1]}
               isSelected={selection==='2'}
               isEnabled={!submitted}
               checkCallback={() => {setSelection('2')}}

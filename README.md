@@ -1,5 +1,7 @@
 Using this for gh-pages deployment rn: https://github.com/gitname/react-gh-pages
 
+schedule.json + tracks.json => python script => updated tracks.json
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

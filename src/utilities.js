@@ -1,8 +1,10 @@
 import Cookies from 'js-cookie';
-import tracks from './tracks.json';
+
+var tracks = require('./tracks.json');
+tracks.sort((a,b) => (a['date'] < b['date']) ? 1 : ((a['date'] > b['date']) ? -1 : 0))
 
 // Max number of days of selections remembered by cookies
-const SELECTION_MEMORY = 10;
+const SELECTION_MEMORY = 32;
 
 // num milliseconds in a day
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
@@ -25,7 +27,7 @@ const MONTHS = [
 const NOW = new Date();
 NOW.setHours(NOW.getHours() + 5); // date cutoff will be 5 hrs after UTC midnight
 const TODAY = new Date(
-    `${NOW.getUTCFullYear()}-${String(NOW.getUTCMonth()).padStart(2, '0')}-${String(NOW.getUTCDate()).padStart(2, '0')}T00:00:00`
+    `${NOW.getUTCFullYear()}-${String(NOW.getUTCMonth()+1).padStart(2, '0')}-${String(NOW.getUTCDate()).padStart(2, '0')}T00:00:00`
 );
 const YESTERDAY = new Date(TODAY);
 YESTERDAY.setDate(YESTERDAY.getDate() - 1);
@@ -34,6 +36,15 @@ YESTERDAY.setDate(YESTERDAY.getDate() - 1);
 if (!Cookies.get('selections')) {
     Cookies.set('selections', '012201211');
     Cookies.set('lastSelectionDate', (new Date('2023-11-16T00:00:00')).getTime());
+}
+
+const getTodaysTracks = () => {
+    for (const t of tracks) {
+        var d = new Date(t['date'] + 'T00:00:00');
+        if (TODAY.getTime() === d.getTime()) {
+            return [t['track1Id'], t['track2Id']];
+        }
+    }
 }
 
 // return today's selection using cookie data
@@ -62,7 +73,7 @@ const submitSelection = (selection) => {
         Cookies.set('selections', selectionsString);
     }
     else {
-        // create the cookies appropriately if thety don't yet exist
+        // create the cookies appropriately if they don't yet exist
         Cookies.set('lastSelectionDate', TODAY.getTime());
         Cookies.set('selections', selection.toString());
     }
@@ -93,13 +104,19 @@ const convertDateStr = (dateStr) => {
 
 // get data about tracks & selections
 const getResultsData = () => {
+    let output = [];
     let selectionsString = Cookies.get('selections');
-    return tracks.map((d, i) => {
-        let d2 = JSON.parse(JSON.stringify(d));
-        d2['selection'] = selectionsString[i] || '0';
-        d2['dateStr'] = convertDateStr(d['date']);
-        return d2;
-    });
+    for (var i = 0; i < Math.min(tracks.length, 7); i++) {
+        var d = new Date(tracks[i]['date'] + 'T00:00:00');
+        if (TODAY.getTime() >= d.getTime()) {
+            let t = JSON.parse(JSON.stringify(tracks[i]));
+            t['selection'] = selectionsString[i] || '0';
+            t['dateStr'] = convertDateStr(tracks[i]['date']);
+            output.push(t);
+        }
+    }
+    console.log(output);
+    return output;
 }
 
-export {submitSelection, getTodaysSelection, getResultsData};
+export {submitSelection, getTodaysTracks, getTodaysSelection, getResultsData};

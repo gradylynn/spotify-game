@@ -40,8 +40,8 @@ def main():
 
     window_df = schedule_df[(schedule_df['date'] <= str(tomorrow)) & (schedule_df['date'] >= str(tomorrow - timedelta(days=32)))]
     window_df = window_df.merge(tracks_df, how='left', on=['date', 'track1Id', 'track2Id'])
-    window_df['track1Playcount'] = window_df.apply(lambda x: x['track1Playcount'] if pd.notnull(x['track1Playcount']) else get_track_info(x['track1Id'])['playcount'], axis=1)
-    window_df['track2Playcount'] = window_df.apply(lambda x: x['track2Playcount'] if pd.notnull(x['track2Playcount']) else get_track_info(x['track2Id'])['playcount'], axis=1)
+    window_df['track1Playcount'] = window_df.apply(lambda x: x['track1Playcount'] if pd.notnull(x['track1Playcount']) else get_track_info(x['track1Id'])['playcount'], axis=1).astype(int)
+    window_df['track2Playcount'] = window_df.apply(lambda x: x['track2Playcount'] if pd.notnull(x['track2Playcount']) else get_track_info(x['track2Id'])['playcount'], axis=1).astype(int)
     
     with open(os.path.join(this_dir, 'tracks.json'), 'w') as f:
         json.dump(window_df.sort_values('date', ascending=False).to_dict('records'), f)
