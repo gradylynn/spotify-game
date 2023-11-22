@@ -14,9 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    # Installing python things
     # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
     - name: Install poetry
-      run: pipx install poetry
+      run: pipx install poetry==1.5.1
     - name: Setup python
       uses: actions/setup-python@v4
       with:
@@ -25,11 +26,27 @@ jobs:
     - name: Install python deps
       run: poetry install
 
+    # Installing node things
     - name: Setup node
       uses: actions/setup-node@v4
       with:
         node-version: 18
         cache: 'npm'
-    - run: npm install
+    - name: Install node deps
+      run: npm install
+
+    - name: Updating tracks data
+      run: poetry run python get_track_data.py
+      env:
+        SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+        SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+
+    # - name: Commit report
+    #   run: |
+    #     git config --global user.name 'Grady Lynn'
+    #     git config --global user.email 'gradylynn@users.noreply.github.com'
+    #     git commit -am "Automated report"
+    #     git push
+
     - run: npm run build
-    - run: ls -lah
+    - run: ls -lah ./build
