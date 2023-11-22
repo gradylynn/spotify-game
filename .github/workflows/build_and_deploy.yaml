@@ -39,11 +39,12 @@ jobs:
         SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
         SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
 
+    # commit and push changes (if any exist)
     - name: Commit updated tracks data
       run: |
         git config --global user.name 'Grady Lynn'
         git config --global user.email 'gradylynn@users.noreply.github.com'
-        git commit -am "automated tracks data update for $(date +'%Y-%m-%d')"
+        git diff --quiet && git diff --staged --quiet || git commit -am "automated tracks data update for $(date +'%Y-%m-%d')"
         git push
 
     - run: npm run build
