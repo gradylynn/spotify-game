@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Brightness1Icon from '@mui/icons-material/Brightness1';
 import Modal from '@mui/material/Modal';
 import ResultsScroll from './ResultsScroll';
 import TrackCard from './TrackCard';
@@ -24,7 +23,9 @@ const App = () => {
     <div>
       <Container>
         <Modal open={showResults} onClose={() => {setShowResults(false)}}>
-          <ResultsScroll closeFunc={() => {setShowResults(false)}}/>
+          <div>
+            <ResultsScroll closeFunc={() => {setShowResults(false)}}/>
+          </div>
         </Modal>
         <Grid container spacing={2} sx={{height: '100vh'}} direction="column" justifyContent="space-around" wrap="nowrap">
           <Grid item xs={1}>
@@ -34,7 +35,7 @@ const App = () => {
                 xs: "45px",
                 md: "60px",
               }}}>
-                The Daily Sp<Brightness1Icon fontSize='large'/>t
+                The Daily Spot
               </Typography>
               <Typography variant="h4" align='center' sx={{
                 fontSize: {

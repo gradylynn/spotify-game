@@ -150,7 +150,7 @@ const aBunchOfListItems = () => {
   let items = []
   for (let i = 0; i < tracks.length; i++) {
     items.push(
-      <ListItem disablePadding sx={{borderBottom: i===(tracks.length-1) ? 0 : 1}}>
+      <ListItem disablePadding key={tracks[i]['dateStr']} sx={{borderBottom: i===(tracks.length-1) ? 0 : 1}}>
         <Result
           date={tracks[i]['dateStr']}
           selection={tracks[i]['selection']}
