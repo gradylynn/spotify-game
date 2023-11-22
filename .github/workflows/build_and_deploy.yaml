@@ -5,7 +5,7 @@ on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: '36 1 * * *'
+    - cron: '36 01 * * *'
 
 jobs:
   build:
@@ -67,7 +67,7 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Deploy to github Pages
         uses: actions/deploy-pages@v2

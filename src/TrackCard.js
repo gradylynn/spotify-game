@@ -83,12 +83,12 @@ const TrackFrame = ({trackId, forceSmall}) => {
   return (
     <iframe
       title='spotify-track'
-      style={{"border-radius": "12px"}}
+      style={{"borderRadius": "12px"}}
       src={`https://open.spotify.com/embed/track/${trackId}`}
       width="100%"
       height={forceSmall ? 80 : iframeHeight}
       frameBorder="0"
-      allowfullscreen=""
+      allowFullScreen=""
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
     />
