@@ -1,6 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
+---
 name: Build and Deploy App
 
 on:
@@ -33,7 +31,7 @@ jobs:
         node-version: 18
         cache: 'npm'
     - name: Install node deps
-      run: npm install
+      run: npm clean-install
 
     - name: Updating tracks data
       run: poetry run python get_track_data.py
@@ -41,14 +39,23 @@ jobs:
         SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
         SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
 
-    # - name: Commit report
-    #   run: |
-    #     git config --global user.name 'Grady Lynn'
-    #     git config --global user.email 'gradylynn@users.noreply.github.com'
-    #     git commit -am "Automated report"
-    #     git push
+    - name: Commit updated tracks data
+      run: |
+        git config --global user.name 'Grady Lynn'
+        git config --global user.email 'gradylynn@users.noreply.github.com'
+        git commit -am "automated tracks data update for $(date +'%Y-%m-%d')"
+        git push
 
     - run: npm run build
+
+    - name: Upload github pages artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: build/
+
+    - name: Deploy to github Pages
+      uses: actions/deploy-pages@v2
+
     - run: ls -lah ./build
     - run: ls -lah ./build/static
     - run: pwd
