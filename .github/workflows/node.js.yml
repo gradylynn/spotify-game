@@ -6,21 +6,21 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v3
+    - name: Testing Nonsense
+      run: ls -lah
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'poetry'
+    - name: Poetry Nonsense
+      run: poetry install
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
