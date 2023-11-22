@@ -4,6 +4,8 @@ name: Build and Deploy App
 on:
   push:
     branches: [ "main" ]
+  schedule:
+    - cron: '36 1 * * *'
 
 jobs:
   build:
@@ -47,8 +49,10 @@ jobs:
         git diff --quiet && git diff --staged --quiet || git commit -am "automated tracks data update for $(date +'%Y-%m-%d')"
         git push
 
+    # build the app
     - run: npm run build
 
+    # upload the artifact of static files for the app
     - name: Upload github pages artifact
       uses: actions/upload-pages-artifact@v2
       with:
@@ -63,12 +67,6 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
 
-    # # Deploy to the github-pages environment
-    # environment:
-    #   name: github-pages
-    #   url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to github Pages
