@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Brightness1Icon from '@mui/icons-material/Brightness1';
 import Modal from '@mui/material/Modal';
 import ResultsScroll from './ResultsScroll';
 import TrackCard from './TrackCard';
@@ -33,7 +34,7 @@ const App = () => {
                 xs: "45px",
                 md: "60px",
               }}}>
-                The Daily Spot
+                The Daily Sp<Brightness1Icon fontSize='large'/>t
               </Typography>
               <Typography variant="h4" align='center' sx={{
                 fontSize: {
