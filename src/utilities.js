@@ -103,14 +103,13 @@ const convertDateStr = (dateStr) => {
 const getResultsData = () => {
     let output = [];
     let selectionsString = Cookies.get('selections');
-    for (var i = 0; i < Math.min(tracks.length, 7); i++) {
-        var d = new Date(tracks[i]['date'] + 'T00:00:00');
-        if (TODAY.getTime() >= d.getTime()) {
-            let t = JSON.parse(JSON.stringify(tracks[i]));
-            t['selection'] = selectionsString[i] || '0';
-            t['dateStr'] = convertDateStr(tracks[i]['date']);
-            output.push(t);
-        }
+    // use this variable to adjust for if tommorrow's track is already in the data
+    let addOne = TODAY.getTime() < (new Date(tracks[0]['date'] + 'T00:00:00')).getTime() ? 1 : 0;
+    for (let i = 0; i < Math.min(tracks.length, 7); i++) {
+        let t = JSON.parse(JSON.stringify(tracks[i+addOne]));
+        t['selection'] = selectionsString[i] || '0';
+        t['dateStr'] = convertDateStr(tracks[i+addOne]['date']);
+        output.push(t);
     }
     return output;
 }
