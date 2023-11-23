@@ -29,7 +29,7 @@ const TODAY = new Date(
     `${NOW.getUTCFullYear()}-${String(NOW.getUTCMonth()+1).padStart(2, '0')}-${String(NOW.getUTCDate()).padStart(2, '0')}T00:00:00`
 );
 // date cutoff will be 5 hrs after UTC midnight
-if (NOW.getUTCHours <= 5) {
+if (NOW.getUTCHours() <= 5) {
     TODAY.setDate(TODAY.getDate() - 1);
 }
 const YESTERDAY = new Date(TODAY);
