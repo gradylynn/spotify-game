@@ -35,12 +35,6 @@ if (NOW.getUTCHours() <= 5) {
 const YESTERDAY = new Date(TODAY);
 YESTERDAY.setDate(YESTERDAY.getDate() - 1);
 
-// NOTE: this block here is just for testing
-if (!Cookies.get('selections')) {
-    Cookies.set('selections', '012201211');
-    Cookies.set('lastSelectionDate', (new Date('2023-11-16T00:00:00')).getTime());
-}
-
 const getTodaysTracks = () => {
     for (const t of tracks) {
         var d = new Date(t['date'] + 'T00:00:00');
