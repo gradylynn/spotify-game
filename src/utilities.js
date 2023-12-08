@@ -66,13 +66,13 @@ const submitSelection = (selection) => {
         selectionsString = selectionsString.substring(0, SELECTION_MEMORY);
 
         // update the cookies appropriately
-        Cookies.set('lastSelectionDate', TODAY.getTime());
-        Cookies.set('selections', selectionsString);
+        Cookies.set('lastSelectionDate', TODAY.getTime(), { expires: SELECTION_MEMORY });
+        Cookies.set('selections', selectionsString, { expires: SELECTION_MEMORY });
     }
     else {
         // create the cookies appropriately if they don't yet exist
-        Cookies.set('lastSelectionDate', TODAY.getTime());
-        Cookies.set('selections', selection.toString());
+        Cookies.set('lastSelectionDate', TODAY.getTime(), { expires: SELECTION_MEMORY });
+        Cookies.set('selections', selection.toString(), { expires: SELECTION_MEMORY });
     }
 }
 
