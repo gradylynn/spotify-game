@@ -35,8 +35,13 @@ def main():
     # planning to run this ~12am eastern
     tomorrow = datetime.date(datetime.utcnow())
 
-    tracks_df = pd.DataFrame(json.load(open(os.path.join(this_dir, 'src', 'tracks.json'), 'r')))
-    schedule_df = pd.DataFrame(json.load(open(os.path.join(this_dir, 'schedule.json'), 'r')))
+    tracks_df = pd.DataFrame(
+        json.load(open(os.path.join(this_dir, 'src', 'tracks.json'), 'r')),
+        columns=['date', 'track1Id', 'track2Id', 'track1Playcount', 'track2Playcount']
+    )
+    schedule_df = pd.DataFrame(
+        json.load(open(os.path.join(this_dir, 'schedule.json'), 'r'))
+    )
 
     window_df = schedule_df[(schedule_df['date'] <= str(tomorrow)) & (schedule_df['date'] >= str(tomorrow - timedelta(days=32)))]
     window_df = window_df.merge(tracks_df, how='left', on=['date', 'track1Id', 'track2Id'])
