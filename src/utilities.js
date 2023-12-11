@@ -105,7 +105,7 @@ const getResultsData = () => {
     let selectionsString = Cookies.get('selections');
     // use this variable to adjust for if tommorrow's track is already in the data
     let addOne = TODAY.getTime() < (new Date(tracks[0]['date'] + 'T00:00:00')).getTime() ? 1 : 0;
-    for (let i = 0; i < Math.min(tracks.length-addOne, 7); i++) {
+    for (let i = 0; i < Math.min(tracks.length-addOne, TODAY.getDate()); i++) {
         let t = JSON.parse(JSON.stringify(tracks[i+addOne]));
         t['selection'] = selectionsString[i] || '0';
         t['dateStr'] = convertDateStr(tracks[i+addOne]['date']);
@@ -114,4 +114,41 @@ const getResultsData = () => {
     return output;
 }
 
-export {submitSelection, getTodaysTracks, getTodaysSelection, getResultsData};
+const copyShareString = () => {
+    let firstDayOfMonth = (TODAY.getDay() - TODAY.getDate() + 50) % 7;
+    let resultsString = getResultsData().map((d) => {
+        if (
+            (d['track1Playcount'] > d['track2Playcount'] && d['selection'] === '1') ||
+            (d['track2Playcount'] > d['track1Playcount'] && d['selection'] === '2')
+        ) {
+            return '🟩';
+        }
+        else if (
+            (d['track1Playcount'] < d['track2Playcount'] && d['selection'] === '1') ||
+            (d['track2Playcount'] < d['track1Playcount'] && d['selection'] === '2')
+        ) {
+            return '🟥';
+        }
+        else {
+            return '⬜';
+        }
+    }).reverse().join('');
+    let daysInMonth = (new Date(TODAY.getFullYear(), TODAY.getMonth()+1, 0)).getDate();
+    // no idea what's going on here: https://stackoverflow.com/a/54369605
+    resultsString += '❓'.repeat(daysInMonth-[...resultsString].length);
+
+    let clipboardString = 'The Daily Spot\n';
+    clipboardString += `${MONTHS[TODAY.getMonth()]} ${TODAY.getFullYear()}\n`;
+    clipboardString += '▪️'.repeat(firstDayOfMonth)
+    for (let i = 0; i < [...resultsString].length; i++) {
+        if (i > 0 && (firstDayOfMonth + i) % 7 === 0) {
+            clipboardString += '\n';
+        }
+        clipboardString += [...resultsString][i];
+    }
+    clipboardString += '▪️'.repeat((42-daysInMonth-firstDayOfMonth)%7);
+    clipboardString += '\n\ngradylynn.com/spotify-game';
+    navigator.clipboard.writeText(clipboardString);
+}
+
+export {submitSelection, getTodaysTracks, getTodaysSelection, getResultsData, copyShareString};

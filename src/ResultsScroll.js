@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import { CardContent, CardHeader, List, ListItem, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,17 +11,17 @@ import TrackCard from './TrackCard';
 
 import {getResultsData} from './utilities'
 
-const ResultsScroll = ({closeFunc}) => {
+const ResultsScroll = ({closeFunc, shareFunc}) => {
   return <Card sx={{
       borderRadius: 5,
       backgroundColor: '#FFFDDD',
       height: {
         xs: "90vh",
-        md: "80vh",
+        md: "82vh",
       },
       width: {
         xs: "90vw",
-        md: "80vw",
+        md: "85vw",
       },
       minHeight: '1000',
       position: 'absolute',
@@ -58,11 +59,18 @@ const ResultsScroll = ({closeFunc}) => {
     />
     <CardContent sx={{p: 0}}>
       <Grid container sx={{py: 2}} direction="column" justifyContent="space-around" wrap="nowrap">
-        <Grid item xs={12}>
-          <Box sx={{border: 1, mx: {xs: 2, md: 3}, p: 0, height: {xs: "74vh", md: "68vh"}, overflow: 'auto'}}>
+        <Grid item xs={10}>
+          <Box sx={{border: 1, mx: {xs: 2, md: 3}, p: 0, height: {xs: "70vh", md: "66vh"}, overflow: 'auto'}}>
             <List disablePadding>
               {aBunchOfListItems()}
             </List>
+          </Box>
+        </Grid>
+        <Grid item xs={1} alignSelf="center">
+          <Box sx={{p: 1}}>
+            <Button size="small" variant="contained" onClick={shareFunc}>
+              Share Results
+            </Button>
           </Box>
         </Grid>
       </Grid>
@@ -146,7 +154,10 @@ const Result = ({date, selection, track1Id, track1Playcount, track2Id, track2Pla
 }
 
 const aBunchOfListItems = () => {
+  // display a week's worth of data here
   let tracks = getResultsData();
+  tracks = tracks.slice(0, Math.min(tracks.length, 7));
+
   let items = []
   for (let i = 0; i < tracks.length; i++) {
     items.push(
