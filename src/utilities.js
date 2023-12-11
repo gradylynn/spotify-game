@@ -135,10 +135,10 @@ const copyShareString = () => {
     }).reverse().join('');
     let daysInMonth = (new Date(TODAY.getFullYear(), TODAY.getMonth()+1, 0)).getDate();
     // no idea what's going on here: https://stackoverflow.com/a/54369605
-    resultsString += '❓'.repeat(daysInMonth-[...resultsString].length);
+    resultsString += '⬛'.repeat(daysInMonth-[...resultsString].length);
 
-    let clipboardString = 'The Daily Spot\n';
-    clipboardString += `${MONTHS[TODAY.getMonth()]} ${TODAY.getFullYear()}\n`;
+    let clipboardString = 'The Daily Spot\n\n';
+    clipboardString += `${MONTHS[TODAY.getMonth()]} ${TODAY.getFullYear()}:\n`;
     clipboardString += '▪️'.repeat(firstDayOfMonth)
     for (let i = 0; i < [...resultsString].length; i++) {
         if (i > 0 && (firstDayOfMonth + i) % 7 === 0) {
